@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-a^mut*)jm@m7+no$ksu+&^z8rgx3=9h*u50q2zqn3r)^2)@rh2
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['54.147.189.201','localhost','*']
 
 
 # Application definition
@@ -80,8 +80,8 @@ WSGI_APPLICATION = 'negativeGaming.wsgi.application'
 DATABASES = {
 'default': {
 'ENGINE': 'django.db.backends.postgresql',
-'NAME': 'BD752_NegativeGaming',
-'USER': 'postgres',
+'NAME': 'negativegaming',
+'USER': 'wesker',
 'PASSWORD': 'tesca123',
 'HOST': '127.0.0.1',
 'PORT': '5432',

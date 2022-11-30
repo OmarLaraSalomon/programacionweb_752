@@ -16,7 +16,7 @@
 
 <br>
 
-
+{% if request.user.is_authenticated %}
 <table class="table table-bordered" style="color: rgb(162, 35, 221);" >
 
     <thead>
@@ -101,4 +101,97 @@
     
     
     </table>
+
+
+
+{%else%}
+
+
+
+
+
+<table class="table table-bordered" style="color: rgb(162, 35, 221);" >
+
+    <thead>
+    <tr>
+    
+    
+    
+        <th colspan="5" class="text-center">
+     Carrito de compras
+    
+        </th>
+        
+    </tr>
+    
+    
+    <tr>
+    <th>Producto</th>
+    <th>Cantidad</th>
+    <th>Suma</th>
+    
+    </tr>
+    
+    </thead>
+    
+    <tbody>
+    
+       
+      
+    
+    
+    <tr class="text-center">
+    
+    <td>{{value.nombre}} </td>
+    <td>{{value.cantidad}} </td>
+    <td>
+     
+    
+  
+ {{value.precio}} MXN$
+</td>
+    
+    
+    </tr>
+   
+          
+    
+        <tr>
+            <td colspan="3">
+    <div class="alert alert-danger text-center">
+    Sin productos
+    </div>
+            </td>
+        </tr>
+       
+           
+        
+    </tbody>
+    
+    <tfoot>
+        <tr>
+            <td colspan="5">
+       
+                
+            </td>
+
+        </tr>
+        
+<!-- comprobar que la persona tiene la sesion abierta y comprobar que hay articulos en el carro -->
+ 
+        <tr><td colspan="5" style="text-align: center;">
+
+            
+
+        </td></tr>
+       
+
+
+    </tfoot>
+    
+    
+    </table>
+
+{% endif %}
+
     

@@ -2,6 +2,15 @@
 
 {% block content %}
 
+
+{% if request.user.is_authenticated %}
+
 <h1>Gracias por tu visita.</h1>
+
+{% else %}
+
+<h1>Bienvenido, te recomendamos que primero te registres, si ya estás registrado, solo incia sesion.</h1>
+
+{% endif %}
 
 {% endblock %}

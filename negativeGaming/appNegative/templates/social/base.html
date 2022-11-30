@@ -50,6 +50,8 @@
 
         
         <ul class="navbar-nav mx-auto">
+          
+        {% if request.user.is_authenticated %}
           <li class="nav-item {% if request.path == '' %} active {% endif %}  px-lg-4">
 
             <a class="nav-link text-uppercase text-expanded"  href="{% url 'home' %}">
@@ -100,6 +102,62 @@
                 <a href=""> <img src="{% static 'imgs/LOGO_NEGATIVE.png' %}" alt=""></a>
                 
                         </label>   
+         {% else %}
+
+
+         <li class="nav-item {% if request.path == '' %} active {% endif %}  px-lg-4">
+
+          <a class="nav-link text-uppercase text-expanded"  href="{% url 'home' %}">
+            <h3 > Inicio</h3>
+          </a>
+        </li>
+
+
+        <li class="nav-item  px-lg-4">
+          <a class="nav-link text-uppercase text-expanded" href="{% url 'categorias' %}">
+            <h3>Productos</h3>
+          </a>
+        </li>
+
+        <li class="nav-item  px-lg-4">
+          <a class="nav-link text-uppercase text-expanded" href="{% url 'revisiones' %}">
+            <h3>Revisiones</h3>
+          </a>
+        </li>
+
+
+        <li class="nav-item  px-lg-4">
+          <a class="nav-link text-uppercase text-expanded" href="{% url 'feed' %}">
+            <h3> Opiniones</h3>
+          </a>
+        </li>
+
+
+        <li class="nav-item  px-lg-4">
+          <a class="nav-link text-uppercase text-expanded" href="{% url 'quienes' %}">
+            <h3> ¿Quienes Somos?</h3>
+          </a>
+        </li>
+
+        <li class="nav-item  px-lg-4">
+          <a class="nav-link text-uppercase text-expanded" href="{% url 'productos' %}">
+            <h3>Lista de deseos</h3>
+          </a>
+        </li>
+
+        <li class="nav-item  px-lg-4">
+          <a class="nav-link text-uppercase text-expanded" href="{% url 'logout' %}">
+            <h3>Iniciar Sesion</h3>
+           </a>     
+          </li>
+          &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;
+            <label for="" class="brand">
+              <a href=""> <img src="{% static 'imgs/LOGO_NEGATIVE.png' %}" alt=""></a>
+              
+                      </label>   
+
+        {% endif %}
+
 
   </nav>
  
